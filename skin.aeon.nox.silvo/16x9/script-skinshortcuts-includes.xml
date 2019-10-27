@@ -278,101 +278,84 @@
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
 			<property name="mainmenuid">3</property>
-			<label>$LOCALIZE[16101]</label>
-			<label2 />
+			<label>[COLORperu]Search[/COLOR]</label>
+			<label2>Custom item</label2>
 			<icon>DefaultShortcut.png</icon>
 			<thumb />
-			<onclick>ActivateWindow(Videos,special://skin/extras/UnwatchedMovies.xsp,return)</onclick>
-			<property name="path">ActivateWindow(Videos,special://skin/extras/UnwatchedMovies.xsp,return)</property>
+			<property name="background">C:\Users\wilc6\AppData\Roaming\Kodi\addons\skin.aeon.nox.silvo\backgrounds\default\defaultred.jpg</property>
+			<property name="backgroundName">C:\Users\wilc6\AppData\Roaming\Kodi\addons\skin.aeon.nox.silvo\backgrounds\default\defaultred.jpg</property>
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.reaper/?mode=tmdb&amp;url=search&amp;name=%5BCOLOR+FFffffffff%5D%5BCOLOR%3Dred%5D%5BB%5DSearch+for+a+Movie%5B%2FB%5D%5B%2FCOLOR%5D%5B%2FCOLOR%5D&amp;iconimage=http%3A%2F%2Freapercrew.gyges.feralhosting.com%2FMedia%2Freaper-crew%2Fresources%2Ficons%2Fsearch_icon.png&amp;fanart=http%3A%2F%2Freapercrew.gyges.feralhosting.com%2FMedia%2Freaper-crew%2Fresources%2Ffanart%2Freaperbg2.jpg&amp;description=No+information+available",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.reaper/?mode=tmdb&amp;url=search&amp;name=%5BCOLOR+FFffffffff%5D%5BCOLOR%3Dred%5D%5BB%5DSearch+for+a+Movie%5B%2FB%5D%5B%2FCOLOR%5D%5B%2FCOLOR%5D&amp;iconimage=http%3A%2F%2Freapercrew.gyges.feralhosting.com%2FMedia%2Freaper-crew%2Fresources%2Ficons%2Fsearch_icon.png&amp;fanart=http%3A%2F%2Freapercrew.gyges.feralhosting.com%2FMedia%2Freaper-crew%2Fresources%2Ffanart%2Freaperbg2.jpg&amp;description=No+information+available",return)</property>
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),num-20342)</visible>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
 			<property name="mainmenuid">3</property>
-			<label>$LOCALIZE[575]</label>
-			<label2 />
+			<label>[COLORperu]Trending Movies[/COLOR]</label>
+			<label2>Custom item</label2>
 			<icon>DefaultShortcut.png</icon>
 			<thumb />
-			<onclick>ActivateWindow(Videos,special://skin/extras/InProgressMovies.xsp,return)</onclick>
-			<property name="path">ActivateWindow(Videos,special://skin/extras/InProgressMovies.xsp,return)</property>
+			<property name="background">C:\Users\wilc6\AppData\Roaming\Kodi\addons\skin.aeon.nox.silvo\backgrounds\default\defaultred.jpg</property>
+			<property name="backgroundName">C:\Users\wilc6\AppData\Roaming\Kodi\addons\skin.aeon.nox.silvo\backgrounds\default\defaultred.jpg</property>
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.reaper/?mode=imdbmovies&amp;url=movies%2Ftrending&amp;name=%5BCOLOR+FFffffffff%5D%5BCOLOR%3Dwhitesmoke%5DTrending+Movies%5B%2FCOLOR%5D&amp;iconimage=http%3A%2F%2Freapercrew.gyges.feralhosting.com%2FMedia%2Freaper-crew%2Fresources%2Ficons%2Ftreanding_movies_icon.png&amp;fanart=http%3A%2F%2Freapercrew.gyges.feralhosting.com%2FMedia%2Freaper-crew%2Fresources%2Ffanart%2Freaperbg2.jpg&amp;description=No+information+available",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.reaper/?mode=imdbmovies&amp;url=movies%2Ftrending&amp;name=%5BCOLOR+FFffffffff%5D%5BCOLOR%3Dwhitesmoke%5DTrending+Movies%5B%2FCOLOR%5D&amp;iconimage=http%3A%2F%2Freapercrew.gyges.feralhosting.com%2FMedia%2Freaper-crew%2Fresources%2Ficons%2Ftreanding_movies_icon.png&amp;fanart=http%3A%2F%2Freapercrew.gyges.feralhosting.com%2FMedia%2Freaper-crew%2Fresources%2Ffanart%2Freaperbg2.jpg&amp;description=No+information+available",return)</property>
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),num-20342)</visible>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
 			<property name="mainmenuid">3</property>
-			<label>$LOCALIZE[31328]</label>
-			<label2 />
+			<label>[COLORperu]Sets[/COLOR]</label>
+			<label2>Custom item</label2>
 			<icon>DefaultShortcut.png</icon>
 			<thumb />
-			<onclick>ActivateWindow(Videos,videodb://recentlyaddedmovies/,return)</onclick>
-			<property name="path">ActivateWindow(Videos,videodb://recentlyaddedmovies/,return)</property>
+			<property name="background">C:\Users\wilc6\AppData\Roaming\Kodi\addons\skin.aeon.nox.silvo\backgrounds\default\defaultred.jpg</property>
+			<property name="backgroundName">C:\Users\wilc6\AppData\Roaming\Kodi\addons\skin.aeon.nox.silvo\backgrounds\default\defaultred.jpg</property>
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.reaper/?mode=get_list&amp;url=http%3A%2F%2Freapercrew.gyges.feralhosting.com%2FMedia%2Freaper-crew%2Fxml%2Fcollections.xml&amp;name=%5BCOLOR+FFffffffff%5D%5BCOLOR%3Dwhitesmoke%5DCollections%5B%2FCOLOR%5D%5B%2FCOLOR%5D&amp;iconimage=http%3A%2F%2Freapercrew.gyges.feralhosting.com%2FMedia%2Freaper-crew%2Fresources%2Ficons%2Fcollections_icon.png&amp;fanart=http%3A%2F%2Freapercrew.gyges.feralhosting.com%2FMedia%2Freaper-crew%2Fresources%2Ffanart%2Freaperbg2.jpg&amp;description=No+information+available",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.reaper/?mode=get_list&amp;url=http%3A%2F%2Freapercrew.gyges.feralhosting.com%2FMedia%2Freaper-crew%2Fxml%2Fcollections.xml&amp;name=%5BCOLOR+FFffffffff%5D%5BCOLOR%3Dwhitesmoke%5DCollections%5B%2FCOLOR%5D%5B%2FCOLOR%5D&amp;iconimage=http%3A%2F%2Freapercrew.gyges.feralhosting.com%2FMedia%2Freaper-crew%2Fresources%2Ficons%2Fcollections_icon.png&amp;fanart=http%3A%2F%2Freapercrew.gyges.feralhosting.com%2FMedia%2Freaper-crew%2Fresources%2Ffanart%2Freaperbg2.jpg&amp;description=No+information+available",return)</property>
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),num-20342)</visible>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="4">
 			<property name="id">$NUMBER[4]</property>
 			<property name="mainmenuid">3</property>
-			<label>$LOCALIZE[20434]</label>
-			<label2 />
+			<label>[COLORperu]Genres[/COLOR]</label>
+			<label2>Custom item</label2>
 			<icon>DefaultShortcut.png</icon>
 			<thumb />
-			<visible>[Library.HasContent(MovieSets)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),num-20342)</visible>
-			<onclick>ActivateWindow(Videos,videodb://movies/sets/,return)</onclick>
-			<property name="path">ActivateWindow(Videos,videodb://movies/sets/,return)</property>
-			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="background">C:\Users\wilc6\AppData\Roaming\Kodi\addons\skin.aeon.nox.silvo\backgrounds\default\defaultred.jpg</property>
+			<property name="backgroundName">C:\Users\wilc6\AppData\Roaming\Kodi\addons\skin.aeon.nox.silvo\backgrounds\default\defaultred.jpg</property>
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.reaper/?mode=get_list&amp;url=http%3A%2F%2Freapercrew.gyges.feralhosting.com%2FMedia%2Freaper-crew%2Fxml%2Fgenre_movies.xml&amp;name=%5BCOLOR+FFffffffff%5D%5BCOLOR%3Dwhitesmoke%5DGenre%27s%5B%2FCOLOR%5D+%5BCOLOR%3Dazure%5D%5BB%5D%5BI%5DGlobal%5B%2FI%5D%5B%2FB%5D%5B%2FCOLOR%5D%5B%2FCOLOR%5D&amp;iconimage=http%3A%2F%2Freapercrew.gyges.feralhosting.com%2FMedia%2Freaper-crew%2Fresources%2Ficons%2Fgenres_global_icon.png&amp;fanart=http%3A%2F%2Freapercrew.gyges.feralhosting.com%2FMedia%2Freaper-crew%2Fresources%2Ffanart%2Freaperbg2.jpg&amp;description=No+information+available",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.reaper/?mode=get_list&amp;url=http%3A%2F%2Freapercrew.gyges.feralhosting.com%2FMedia%2Freaper-crew%2Fxml%2Fgenre_movies.xml&amp;name=%5BCOLOR+FFffffffff%5D%5BCOLOR%3Dwhitesmoke%5DGenre%27s%5B%2FCOLOR%5D+%5BCOLOR%3Dazure%5D%5BB%5D%5BI%5DGlobal%5B%2FI%5D%5B%2FB%5D%5B%2FCOLOR%5D%5B%2FCOLOR%5D&amp;iconimage=http%3A%2F%2Freapercrew.gyges.feralhosting.com%2FMedia%2Freaper-crew%2Fresources%2Ficons%2Fgenres_global_icon.png&amp;fanart=http%3A%2F%2Freapercrew.gyges.feralhosting.com%2FMedia%2Freaper-crew%2Fresources%2Ffanart%2Freaperbg2.jpg&amp;description=No+information+available",return)</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),num-20342)</visible>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="5">
 			<property name="id">$NUMBER[5]</property>
 			<property name="mainmenuid">3</property>
-			<label>$LOCALIZE[135]</label>
-			<label2 />
+			<label>[COLORperu]Years[/COLOR]</label>
+			<label2>Custom item</label2>
 			<icon>DefaultShortcut.png</icon>
 			<thumb />
-			<onclick condition="Library.HasContent(Movies)">ActivateWindow(Videos,videodb://movies/genres/,return)</onclick>
-			<property name="path">ActivateWindow(Videos,videodb://movies/genres/,return)</property>
-			<onclick condition="![Library.HasContent(Movies)]">ActivateWindow(videos,files,return)</onclick>
+			<property name="background">C:\Users\wilc6\AppData\Roaming\Kodi\addons\skin.aeon.nox.silvo\backgrounds\default\defaultred.jpg</property>
+			<property name="backgroundName">C:\Users\wilc6\AppData\Roaming\Kodi\addons\skin.aeon.nox.silvo\backgrounds\default\defaultred.jpg</property>
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.reaper/?mode=get_list&amp;url=http%3A%2F%2Freapercrew.gyges.feralhosting.com%2FMedia%2Freaper-crew%2Fxml%2Fmovie-years.xml&amp;name=%5BCOLOR+FFffffffff%5D%5BCOLOR%3Dwhitesmoke%5DBy+Year%5B%2FCOLOR%5D%5B%2FCOLOR%5D&amp;iconimage=http%3A%2F%2Freapercrew.gyges.feralhosting.com%2FMedia%2Freaper-crew%2Fresources%2Ficons%2Fyear_icon.png&amp;fanart=http%3A%2F%2Freapercrew.gyges.feralhosting.com%2FMedia%2Freaper-crew%2Fresources%2Ffanart%2Freaperbg2.jpg&amp;description=No+information+available",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.reaper/?mode=get_list&amp;url=http%3A%2F%2Freapercrew.gyges.feralhosting.com%2FMedia%2Freaper-crew%2Fxml%2Fmovie-years.xml&amp;name=%5BCOLOR+FFffffffff%5D%5BCOLOR%3Dwhitesmoke%5DBy+Year%5B%2FCOLOR%5D%5B%2FCOLOR%5D&amp;iconimage=http%3A%2F%2Freapercrew.gyges.feralhosting.com%2FMedia%2Freaper-crew%2Fresources%2Ficons%2Fyear_icon.png&amp;fanart=http%3A%2F%2Freapercrew.gyges.feralhosting.com%2FMedia%2Freaper-crew%2Fresources%2Ffanart%2Freaperbg2.jpg&amp;description=No+information+available",return)</property>
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),num-20342)</visible>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="6">
 			<property name="id">$NUMBER[6]</property>
 			<property name="mainmenuid">3</property>
-			<label>$LOCALIZE[652]</label>
-			<label2 />
+			<label>[COLORperu]Actors[/COLOR]</label>
+			<label2>Custom item</label2>
 			<icon>DefaultShortcut.png</icon>
 			<thumb />
-			<onclick condition="Library.HasContent(Movies)">ActivateWindow(Videos,videodb://movies/years/,return)</onclick>
-			<property name="path">ActivateWindow(Videos,videodb://movies/years/,return)</property>
-			<onclick condition="![Library.HasContent(Movies)]">ActivateWindow(videos,files,return)</onclick>
-			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),num-20342)</visible>
-			<property name="isSubmenu">True</property>
-		</item>
-		<item id="7">
-			<property name="id">$NUMBER[7]</property>
-			<property name="mainmenuid">3</property>
-			<label>$LOCALIZE[344]</label>
-			<label2 />
-			<icon>DefaultShortcut.png</icon>
-			<thumb />
-			<onclick condition="Library.HasContent(Movies)">ActivateWindow(Videos,videodb://movies/actors/,return)</onclick>
-			<property name="path">ActivateWindow(Videos,videodb://movies/actors/,return)</property>
-			<onclick condition="![Library.HasContent(Movies)]">ActivateWindow(videos,files,return)</onclick>
-			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),num-20342)</visible>
-			<property name="isSubmenu">True</property>
-		</item>
-		<item id="8">
-			<property name="id">$NUMBER[8]</property>
-			<property name="mainmenuid">3</property>
-			<label>$LOCALIZE[20459]</label>
-			<label2 />
-			<icon>DefaultShortcut.png</icon>
-			<thumb />
-			<onclick condition="Library.HasContent(Movies)">ActivateWindow(Videos,videodb://movies/tags/,return)</onclick>
-			<property name="path">ActivateWindow(Videos,videodb://movies/tags/,return)</property>
-			<onclick condition="![Library.HasContent(Movies)]">ActivateWindow(videos,files,return)</onclick>
+			<property name="background">C:\Users\wilc6\AppData\Roaming\Kodi\addons\skin.aeon.nox.silvo\backgrounds\default\defaultred.jpg</property>
+			<property name="backgroundName">C:\Users\wilc6\AppData\Roaming\Kodi\addons\skin.aeon.nox.silvo\backgrounds\default\defaultred.jpg</property>
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.reaper/?mode=get_list&amp;url=https%3A%2F%2Fgyges.feralhosting.com%2Freapercrew%2FMedia%2Freaper-crew%2Fxml%2Fpeoplemain.xml&amp;name=%5BCOLOR+FFffffffff%5D%5BCOLOR%3Dwhite%5DPeople%5B%2FCOLOR%5D%5B%2FCOLOR%5D&amp;iconimage=http%3A%2F%2Freapercrew.gyges.feralhosting.com%2FMedia%2Freaper-crew%2Fresources%2Ficons%2Fpeople_icon.png&amp;fanart=http%3A%2F%2Freapercrew.gyges.feralhosting.com%2FMedia%2Freaper-crew%2Fresources%2Ffanart%2Freaperbg2.jpg&amp;description=No+information+available",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.reaper/?mode=get_list&amp;url=https%3A%2F%2Fgyges.feralhosting.com%2Freapercrew%2FMedia%2Freaper-crew%2Fxml%2Fpeoplemain.xml&amp;name=%5BCOLOR+FFffffffff%5D%5BCOLOR%3Dwhite%5DPeople%5B%2FCOLOR%5D%5B%2FCOLOR%5D&amp;iconimage=http%3A%2F%2Freapercrew.gyges.feralhosting.com%2FMedia%2Freaper-crew%2Fresources%2Ficons%2Fpeople_icon.png&amp;fanart=http%3A%2F%2Freapercrew.gyges.feralhosting.com%2FMedia%2Freaper-crew%2Fresources%2Ffanart%2Freaperbg2.jpg&amp;description=No+information+available",return)</property>
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),num-20342)</visible>
 			<property name="isSubmenu">True</property>
 		</item>
@@ -392,63 +375,84 @@
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
 			<property name="mainmenuid">4</property>
-			<label>$LOCALIZE[575]</label>
-			<label2 />
+			<label>[COLORperu]DC Comics[/COLOR]</label>
+			<label2>Custom item</label2>
 			<icon>DefaultShortcut.png</icon>
 			<thumb />
-			<onclick>ActivateWindow(Videos,videodb://inprogresstvshows/,return)</onclick>
-			<property name="path">ActivateWindow(Videos,videodb://inprogresstvshows/,return)</property>
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.reaper/?mode=get_list&amp;url=https%3A%2F%2Fgyges.feralhosting.com%2Freapercrew%2FMedia%2Freaper-crew%2Fxml%2Ftvshows%2FDCComics%2FDCComics.xml&amp;name=%5BCOLOR+FFffffffff%5D%5BCOLOR%3Dwhitesmoke%5DDC-TV%5B%2FCOLOR%5D%5B%2FCOLOR%5D&amp;iconimage=http%3A%2F%2Freapercrew.gyges.feralhosting.com%2FMedia%2Freaper-crew%2Fresources%2Ficons%2Fdccomics_icon.png&amp;fanart=http%3A%2F%2Freapercrew.gyges.feralhosting.com%2FMedia%2Freaper-crew%2Fresources%2Ffanart%2Freaperbg2.jpg&amp;description=No+information+available",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.reaper/?mode=get_list&amp;url=https%3A%2F%2Fgyges.feralhosting.com%2Freapercrew%2FMedia%2Freaper-crew%2Fxml%2Ftvshows%2FDCComics%2FDCComics.xml&amp;name=%5BCOLOR+FFffffffff%5D%5BCOLOR%3Dwhitesmoke%5DDC-TV%5B%2FCOLOR%5D%5B%2FCOLOR%5D&amp;iconimage=http%3A%2F%2Freapercrew.gyges.feralhosting.com%2FMedia%2Freaper-crew%2Fresources%2Ficons%2Fdccomics_icon.png&amp;fanart=http%3A%2F%2Freapercrew.gyges.feralhosting.com%2FMedia%2Freaper-crew%2Fresources%2Ffanart%2Freaperbg2.jpg&amp;description=No+information+available",return)</property>
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),tvshows)</visible>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
 			<property name="mainmenuid">4</property>
-			<label>$LOCALIZE[31328]</label>
-			<label2 />
+			<label>[COLORperu]Genres[/COLOR]</label>
+			<label2>Custom item</label2>
 			<icon>DefaultShortcut.png</icon>
 			<thumb />
-			<onclick>ActivateWindow(Videos,videodb://recentlyaddedepisodes/,return)</onclick>
-			<property name="path">ActivateWindow(Videos,videodb://recentlyaddedepisodes/,return)</property>
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.reaper/?mode=get_list&amp;url=http%3A%2F%2Freapercrew.gyges.feralhosting.com%2FMedia%2Freaper-crew%2Fxml%2Fgenre_tv.xml&amp;name=%5BCOLOR+FFffffffff%5D%5BCOLOR%3Dwhitesmoke%5DGenre%27s%5B%2FCOLOR%5D%5B%2FCOLOR%5D&amp;iconimage=http%3A%2F%2Freapercrew.gyges.feralhosting.com%2FMedia%2Freaper-crew%2Fresources%2Ficons%2Fgenres_icon.png&amp;fanart=http%3A%2F%2Freapercrew.gyges.feralhosting.com%2FMedia%2Freaper-crew%2Fresources%2Ffanart%2Freaperbg2.jpg&amp;description=No+information+available",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.reaper/?mode=get_list&amp;url=http%3A%2F%2Freapercrew.gyges.feralhosting.com%2FMedia%2Freaper-crew%2Fxml%2Fgenre_tv.xml&amp;name=%5BCOLOR+FFffffffff%5D%5BCOLOR%3Dwhitesmoke%5DGenre%27s%5B%2FCOLOR%5D%5B%2FCOLOR%5D&amp;iconimage=http%3A%2F%2Freapercrew.gyges.feralhosting.com%2FMedia%2Freaper-crew%2Fresources%2Ficons%2Fgenres_icon.png&amp;fanart=http%3A%2F%2Freapercrew.gyges.feralhosting.com%2FMedia%2Freaper-crew%2Fresources%2Ffanart%2Freaperbg2.jpg&amp;description=No+information+available",return)</property>
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),tvshows)</visible>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="4">
 			<property name="id">$NUMBER[4]</property>
 			<property name="mainmenuid">4</property>
-			<label>$LOCALIZE[135]</label>
-			<label2 />
+			<label>[COLORperu]I Remember That[/COLOR]</label>
+			<label2>Custom item</label2>
 			<icon>DefaultShortcut.png</icon>
 			<thumb />
-			<onclick condition="Library.HasContent(TVShows)">ActivateWindow(Videos,videodb://tvshows/genres/,return)</onclick>
-			<property name="path">ActivateWindow(Videos,videodb://tvshows/genres/,return)</property>
-			<onclick condition="![Library.HasContent(TVShows)]">ActivateWindow(videos,files,return)</onclick>
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.reaper/?mode=get_list&amp;url=https%3A%2F%2Fgyges.feralhosting.com%2Freapercrew%2FMedia%2Freaper-crew%2Fxml%2Ftvshows%2FI_Remember_That%2Fremember.xml&amp;name=%5BCOLOR+FFffffffff%5D%5BCOLOR%3Dwhitesmoke%5DI+Remember+That%5B%2FCOLOR%5D%5B%2FCOLOR%5D&amp;iconimage=http%3A%2F%2Freapercrew.gyges.feralhosting.com%2FMedia%2Freaper-crew%2Fresources%2Ficons%2FIRT_icon.png&amp;fanart=http%3A%2F%2Freapercrew.gyges.feralhosting.com%2FMedia%2Freaper-crew%2Fresources%2Ffanart%2Freaperbg2.jpg&amp;description=No+information+available",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.reaper/?mode=get_list&amp;url=https%3A%2F%2Fgyges.feralhosting.com%2Freapercrew%2FMedia%2Freaper-crew%2Fxml%2Ftvshows%2FI_Remember_That%2Fremember.xml&amp;name=%5BCOLOR+FFffffffff%5D%5BCOLOR%3Dwhitesmoke%5DI+Remember+That%5B%2FCOLOR%5D%5B%2FCOLOR%5D&amp;iconimage=http%3A%2F%2Freapercrew.gyges.feralhosting.com%2FMedia%2Freaper-crew%2Fresources%2Ficons%2FIRT_icon.png&amp;fanart=http%3A%2F%2Freapercrew.gyges.feralhosting.com%2FMedia%2Freaper-crew%2Fresources%2Ffanart%2Freaperbg2.jpg&amp;description=No+information+available",return)</property>
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),tvshows)</visible>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="5">
 			<property name="id">$NUMBER[5]</property>
 			<property name="mainmenuid">4</property>
-			<label>$LOCALIZE[652]</label>
-			<label2 />
+			<label>[COLORperu]Marvel[/COLOR]</label>
+			<label2>Custom item</label2>
 			<icon>DefaultShortcut.png</icon>
 			<thumb />
-			<onclick condition="Library.HasContent(TVShows)">ActivateWindow(Videos,videodb://tvshows/years/,return)</onclick>
-			<property name="path">ActivateWindow(Videos,videodb://tvshows/years/,return)</property>
-			<onclick condition="![Library.HasContent(TVShows)]">ActivateWindow(videos,files,return)</onclick>
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.reaper/?mode=get_list&amp;url=http%3A%2F%2Freapercrew.gyges.feralhosting.com%2FMedia%2Freaper-crew%2Fxml%2FMarvel-TV.xml&amp;name=%5BCOLOR+FFffffffff%5D%5BCOLOR%3Dwhitesmoke%5DMarvel-TV%5B%2FCOLOR%5D%5B%2FCOLOR%5D&amp;iconimage=http%3A%2F%2Freapercrew.gyges.feralhosting.com%2FMedia%2Freaper-crew%2Fresources%2Ficons%2Fmarvel_icon.png&amp;fanart=http%3A%2F%2Freapercrew.gyges.feralhosting.com%2FMedia%2Freaper-crew%2Fresources%2Ffanart%2Freaperbg2.jpg&amp;description=No+information+available",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.reaper/?mode=get_list&amp;url=http%3A%2F%2Freapercrew.gyges.feralhosting.com%2FMedia%2Freaper-crew%2Fxml%2FMarvel-TV.xml&amp;name=%5BCOLOR+FFffffffff%5D%5BCOLOR%3Dwhitesmoke%5DMarvel-TV%5B%2FCOLOR%5D%5B%2FCOLOR%5D&amp;iconimage=http%3A%2F%2Freapercrew.gyges.feralhosting.com%2FMedia%2Freaper-crew%2Fresources%2Ficons%2Fmarvel_icon.png&amp;fanart=http%3A%2F%2Freapercrew.gyges.feralhosting.com%2FMedia%2Freaper-crew%2Fresources%2Ffanart%2Freaperbg2.jpg&amp;description=No+information+available",return)</property>
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),tvshows)</visible>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="6">
 			<property name="id">$NUMBER[6]</property>
 			<property name="mainmenuid">4</property>
-			<label>$LOCALIZE[344]</label>
-			<label2 />
+			<label>[COLORperu]Search[/COLOR]</label>
+			<label2>Custom item</label2>
 			<icon>DefaultShortcut.png</icon>
 			<thumb />
-			<onclick condition="Library.HasContent(TVShows)">ActivateWindow(Videos,videodb://tvshows/actors/,return)</onclick>
-			<property name="path">ActivateWindow(Videos,videodb://tvshows/actors/,return)</property>
-			<onclick condition="![Library.HasContent(TVShows)]">ActivateWindow(videos,files,return)</onclick>
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.reaper/?mode=tmdb&amp;url=search&amp;name=%5BCOLOR+FFffffffff%5D%5BCOLOR%3Dwhitesmoke%5DSearch+for+a+Show%5B%2FCOLOR%5D%5B%2FCOLOR%5D&amp;iconimage=http%3A%2F%2Freapercrew.gyges.feralhosting.com%2FMedia%2Freaper-crew%2Fresources%2Ficons%2Fsearch_icon.png&amp;fanart=http%3A%2F%2Freapercrew.gyges.feralhosting.com%2FMedia%2Freaper-crew%2Fresources%2Ffanart%2Freaperbg2.jpg&amp;description=No+information+available",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.reaper/?mode=tmdb&amp;url=search&amp;name=%5BCOLOR+FFffffffff%5D%5BCOLOR%3Dwhitesmoke%5DSearch+for+a+Show%5B%2FCOLOR%5D%5B%2FCOLOR%5D&amp;iconimage=http%3A%2F%2Freapercrew.gyges.feralhosting.com%2FMedia%2Freaper-crew%2Fresources%2Ficons%2Fsearch_icon.png&amp;fanart=http%3A%2F%2Freapercrew.gyges.feralhosting.com%2FMedia%2Freaper-crew%2Fresources%2Ffanart%2Freaperbg2.jpg&amp;description=No+information+available",return)</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),tvshows)</visible>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="7">
+			<property name="id">$NUMBER[7]</property>
+			<property name="mainmenuid">4</property>
+			<label>[COLORperu]The Funny Bone[/COLOR]</label>
+			<label2>Custom item</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.reaper/?mode=get_list&amp;url=http%3A%2F%2Freapercrew.gyges.feralhosting.com%2FMedia%2Freaper-crew%2Fxml%2Fcomediansmain.xml&amp;name=%5BCOLOR+FFffffffff%5D%5BCOLOR%3Dwhitesmoke%5DThe+Funny+Bone%5B%2FCOLOR%5D%5B%2FCOLOR%5D&amp;iconimage=http%3A%2F%2Freapercrew.gyges.feralhosting.com%2FMedia%2Freaper-crew%2Fresources%2Ficons%2Fcomedians_icon.png&amp;fanart=http%3A%2F%2Freapercrew.gyges.feralhosting.com%2FMedia%2Freaper-crew%2Fresources%2Ffanart%2Freaperbg2.jpg&amp;description=No+information+available",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.reaper/?mode=get_list&amp;url=http%3A%2F%2Freapercrew.gyges.feralhosting.com%2FMedia%2Freaper-crew%2Fxml%2Fcomediansmain.xml&amp;name=%5BCOLOR+FFffffffff%5D%5BCOLOR%3Dwhitesmoke%5DThe+Funny+Bone%5B%2FCOLOR%5D%5B%2FCOLOR%5D&amp;iconimage=http%3A%2F%2Freapercrew.gyges.feralhosting.com%2FMedia%2Freaper-crew%2Fresources%2Ficons%2Fcomedians_icon.png&amp;fanart=http%3A%2F%2Freapercrew.gyges.feralhosting.com%2FMedia%2Freaper-crew%2Fresources%2Ffanart%2Freaperbg2.jpg&amp;description=No+information+available",return)</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),tvshows)</visible>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="8">
+			<property name="id">$NUMBER[8]</property>
+			<property name="mainmenuid">4</property>
+			<label>[COLORperu]Trending Shows[/COLOR]</label>
+			<label2>Custom item</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.reaper/?mode=trakt&amp;url=https%3A%2F%2Fapi.trakt.tv%2Fshows%2Ftrending&amp;name=%5BCOLOR+FFffffffff%5D%5BCOLOR%3Dwhitesmoke%5DTrending+TV+Shows%5B%2FCOLOR%5D%5B%2FCOLOR%5D&amp;iconimage=http%3A%2F%2Freapercrew.gyges.feralhosting.com%2FMedia%2Freaper-crew%2Fresources%2Ficons%2Ftreanding_tv_icon.png&amp;fanart=http%3A%2F%2Freapercrew.gyges.feralhosting.com%2FMedia%2Freaper-crew%2Fresources%2Ffanart%2Freaperbg2.jpg&amp;description=No+information+available",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.reaper/?mode=trakt&amp;url=https%3A%2F%2Fapi.trakt.tv%2Fshows%2Ftrending&amp;name=%5BCOLOR+FFffffffff%5D%5BCOLOR%3Dwhitesmoke%5DTrending+TV+Shows%5B%2FCOLOR%5D%5B%2FCOLOR%5D&amp;iconimage=http%3A%2F%2Freapercrew.gyges.feralhosting.com%2FMedia%2Freaper-crew%2Fresources%2Ficons%2Ftreanding_tv_icon.png&amp;fanart=http%3A%2F%2Freapercrew.gyges.feralhosting.com%2FMedia%2Freaper-crew%2Fresources%2Ffanart%2Freaperbg2.jpg&amp;description=No+information+available",return)</property>
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),tvshows)</visible>
 			<property name="isSubmenu">True</property>
 		</item>
