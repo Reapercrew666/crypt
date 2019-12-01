@@ -88,7 +88,7 @@
         <setting id="debug" type="bool" label="API's" default="false" visible="true"/>
         <setting id="first_run" label="first run" type="bool" default="false" visible="false"/>
         <setting label="Cache Location" id="cache_folder" type="folder" default="special://profile/addon_data/plugin.video.reaper/" visible="false"/>
-        <setting label="TVDB API Key" type="text" id="tvdb_api_key" option="hidden" default="BBOS5ZVJGABTRWWI" visible="eq(-3,true)"/>
+        <setting label="TVDB API Key" type="text" id="tvdb_api_key" option="hidden" default="3a5ad978304596f5b9896b19d77692ba" visible="eq(-3,true)"/>
         <setting label="TMDB API Key" type="text" id="tmdb_api_key" option="hidden" default="9c91579269be98a5bb951dae93953ca8" visible="eq(-4,true)"/>
         <setting label="Trakt Client ID" type="text" id="trakt_api_client_id" option="hidden" default="27b84c1f59d1231ff323e09156803a279d4e2b5e106e06798280e213f05d5f0e" visible="eq(-5,true)"/>
         <setting label="Trakt Client Secret" type="text" id="trakt_api_client_secret" option="hidden" visible="!eq(-1,true) + eq(-6,true)" default="829e2ce1bb1d8b41478f69756c5e0099c52d2b741ec55fa6e2137ff1bf68391b"/>
