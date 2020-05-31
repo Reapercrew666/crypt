@@ -52,7 +52,7 @@
         <setting id="pwd_var" type="text" label="30207" default="password" visible="false"/>
         <setting id="session_length" type="text" label="30208" default="24" visible="false"/>
         <setting id="login_verified" type="text" label="30205" default="Welcome to" visible="false"/>
-        <setting id="login_welcome_msg" type="text" label="30210" default="Welcome to heimdall %s" visible="false"/>
+        <setting id="login_welcome_msg" type="text" label="30210" default="Welcome to Jen %s" visible="false"/>
         <setting id="login_failed_msg" type="text" label="30211" default="Username or Password was incorrect %s" visible="false"/>
         <setting id="login_required_msg" type="text" label="30212" default="Please enter a valid username and password in Settings" visible="false"/>
     </category>-->
@@ -68,7 +68,7 @@
     <category label="Resolvers">
         <setting label="30741" type="lsep"/>
         <setting label="30742" type="action" option="close"
-               action="RunPlugin(plugin://plugin.video.heimdall/?mode=ResolverSettings)"/>
+               action="RunPlugin(plugin://plugin.video.heimdall//?mode=ResolverSettings)"/>
 
         <!-- Filtering settings -->
         <setting label="30735" type="lsep"/>
@@ -106,7 +106,7 @@
     <category label="30770">
         <setting id="debug" type="bool" label="30758" default="false" visible="true"/>
         <setting id="root_xml" type="text" label="30060" option="hidden" default="http://reapercrew.chaos.feralhosting.com/Media/heimdall/xml/main.xml" visible="false"/>
-        <setting id="message_xml_url" type="text" label="News File Location" option="hidden" default="http://reapercrew.chaos.feralhosting.com/Media/heimdall/xml/news.xml" visible="false"/>
+        <setting id="message_xml_url" type="text" label="News File Location" option="hidden" default="file://news.xml" visible="false"/>
         <setting id="current_version" type="text" label="Current API Set Version" option="hidden" default="0" visible="false"/>
         <setting id="enable_notification" type="bool" label="Enable Service Notification" option="hidden" default="true" visible="false"/>
         <setting id="disable_service" type="bool" label="Disable Service After First Run" option="hidden" default="true" visible="false"/>
