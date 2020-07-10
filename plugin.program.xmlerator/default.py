@@ -151,14 +151,14 @@ def Tmdb_info(url):
 
 
 def imdb_info(url):
+    dialog = xbmcgui.Dialog()
     if tmdb_api_key == 'TMDB':
-        dialog = xbmcgui.Dialog()
         dialog.notification('Enter api key', 'Enter TMDB api key in settings', xbmcgui.NOTIFICATION_INFO, 5000)
         return
+    folder_name = output_folder() 
+    list_number2 = dialog.input('IMDB List Number')   
+    list_number2 = list_number2.replace("ls", "")
     try:
-        folder_name = output_folder() 
-        list_number2 = dialog.input('IMDB List Number')   
-        list_number2 = list_number2.replace("ls", "")
         url = "http://www.imdb.com/list/ls%s/" % int(list_number2)
         html = requests.get(url).content
         match2 = re.compile('<h1 class="header list-name">(.+?)</h1>.+?<div class="desc lister-total-num-results">(.+?)</div>',re.DOTALL).findall(html)       
@@ -194,20 +194,19 @@ def imdb_info(url):
     except: pass
 
 def trakt_info(url):
+    dialog = xbmcgui.Dialog()
     if tmdb_api_key == 'TMDB':
-        dialog = xbmcgui.Dialog()
         dialog.notification('Enter api key', 'Enter TMDB api key in settings', xbmcgui.NOTIFICATION_INFO, 5000)
         return
     if trakt_client_id == 'TRAKT':
-        dialog = xbmcgui.Dialog()
         dialog.notification('Enter client key', 'Enter Trakt client key in settings', xbmcgui.NOTIFICATION_INFO, 5000)
         return
+    folder_name = output_folder()
+    trakt_user_name = dialog.input('Trakt User Name')
+    list_number3 = dialog.input('Trakt List Name')
+    list_name = list_number3.replace(" ", "-")
+    user = trakt_user_name.replace(" ", "-")
     try:
-        folder_name = output_folder()
-        trakt_user_name = dialog.input('Trakt User Name')
-        list_number3 = dialog.input('Trakt List Name')
-        list_name = list_number3.replace(" ", "-")
-        user = trakt_user_name.replace(" ", "-")
         headers = {
             'Content-Type': 'application/json',
             'trakt-api-version': '2',
