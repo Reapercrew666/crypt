@@ -12,6 +12,5 @@
 	  <setting label="Text" type="lsep"/>
 	  <setting id= "Text_color" type="text" label="Text Color" default="white" visible="true"/>
 	  <setting label="Enable Bold Type" type="bool" id="bold_type" default="false"/>
-	  <setting label="Output as Json" type="bool" id="json_out" default="false"/>
 	</category>  
 </settings>

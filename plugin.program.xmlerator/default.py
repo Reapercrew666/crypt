@@ -47,7 +47,6 @@ trakt_client_id     = ownAddon.getSetting('Trakt_api')
 Text_color          = ownAddon.getSetting('Text_color')
 bold_value          = ownAddon.getSetting('bold_type')
 get_trailer         = ownAddon.getSetting("include_trailer")
-json_output         = ownAddon.getSetting("json_out")
 User_Agent          = 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36'
 
 if os.path.exists(xmlerator_data): pass
@@ -139,15 +138,7 @@ def Tmdb_info(url):
             eurl = "https://api.themoviedb.org/3/tv/%s/external_ids?api_key=%s&language=en-US"%(tmdb,tmdb_api_key)
             data = requests.get(eurl).json()
             imdb = data['imdb_id']
-        if json_output == 'true':
-            movies = get_metadata(tmdb,imdb,media,folder_name,list_name)
-            Total.append(movies)
         get_metadata(tmdb,imdb,media,folder_name,list_name)
-    xml_folder = os.path.join(xml_path,folder_name)
-    Test_file = os.path.join(xml_folder,'test')
-    f = open('%s.json'%(Test_file), 'a')
-    json.dump(Total,f,indent=4,sort_keys=True)
-    f.close()
 
 
 def imdb_info(url):
@@ -306,31 +297,12 @@ def get_metadata(tmdb,imdb,media,folder_name,list_name):
                     trail_key = thtml['results'][0]['key']
             except: pass                    
         get_tv_seasons(tmdb, fanart, imdb, folder_name)
-    if json_output == 'true':
-        Movies = {'name':name, 'year':year, 'imdb':imdb, 'tmdb':tmdb,
-                    'icon':icon, 'fanart':fanart, 'summary':summary}
-        return Movies
-        #print_movie_json(list_name, media, name, year, imdb, tmdb, icon, fanart, folder_name,trail_key,summary)
-        
-    # else:
-    #     print_movie_xml(list_name, media, name, year, imdb, tmdb, icon, fanart, folder_name,trail_key,summary)
+
+    print_movie_xml(list_name, media, name, year, imdb, tmdb, icon, fanart, folder_name,trail_key,summary)
 
 
 def open_settings():
     xbmcaddon.Addon().openSettings()
-
-def print_movie_json(list_name, media, name, year, imdb, tmdb, icon, fanart, folder_name,trail_key,summary):
-    if media == "movie":
-        xml_folder = os.path.join(xml_path,folder_name)
-        Test_file = os.path.join(xml_folder,'test')
-        Movies = {'name':name, 'year':year, 'imdb':imdb, 'tmdb':tmdb,
-                    'icon':icon, 'fanart':fanart, 'summary':summary}
-        f = open('%s.json'%(Test_file), 'a')
-        json.dump(Movies,f,indent=4,sort_keys=True)
-        f.close()
-        # with open('%s.json'%(Test_file), 'a',indent=4,sort_keys=True) as json_file:
-        #     json.dump(Movies, json_file)
-
 
 def print_movie_xml(list_name, media, name, year, imdb, tmdb, icon, fanart, folder_name,trail_key,summary):
     try:       
