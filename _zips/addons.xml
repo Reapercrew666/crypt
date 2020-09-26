@@ -668,7 +668,7 @@
   </extension>
 </addon>
 
-<addon id="plugin.video.heimdall" name="[COLOR=chocolate][B]Heimdall[/B][/COLOR]" version="1.0.7" provider-name="[COLOR=azure]Asgardians[/COLOR]">
+<addon id="plugin.video.reapers-reels" name="[COLOR=chocolate][B]Reaper's Reel's[/B][/COLOR]" version="1.0.0" provider-name="[COLOR=azure]Somebody[/COLOR]">
     <requires>
         <import addon="xbmc.python" version="2.19.0" />
         <import addon="script.module.universalscrapers" version="1.0.0" />
@@ -686,8 +686,8 @@
     </extension>
     <extension point="xbmc.jen" library="service.py" start="[login|startup]" />
     <extension point="xbmc.addon.metadata">
-        <summary lang="en">Heimdall v1.0.7:</summary>
-        <description lang="en">Entertainment from the Gods.</description>
+        <summary lang="en">Reaper's Reel's v1.0.0:</summary>
+        <description lang="en">Entertainment from Somewhere.</description>
         <disclaimer lang="en">The author is not responsible for the use of this addon. The author is not responsible for the content found using this addon. The author does not host or own any content found within this addon.[CR]The author is in no way affiliated with Kodi, Team Kodi, or the XBMC Foundation.[CR]This is a Non-profit resource, organized solely for educational purposes which is protected under the Fair-Use doctrine of the Copyright Act, Specifically section 107, which does promote freedom of expression, by permitting the unlicensed use of copyright-protected works.</disclaimer>
         <platform>all</platform>
         <video_guide>https://youtu.be/0kFhoWahtFw</video_guide>
@@ -695,7 +695,7 @@
     </extension>
 </addon>
 
-<addon id="plugin.video.youtube" name="YouTube" version="6.7.0" provider-name="anxdpanic, bromix">
+<addon id="plugin.video.youtube" name="YouTube" version="6.8.4" provider-name="anxdpanic, bromix">
     <requires>
         <import addon="xbmc.python" version="2.20.0"/>
         <import addon="script.module.six" version="1.11.0"/>
@@ -709,19 +709,11 @@
     <extension point="xbmc.python.module" library="resources/lib/"/>
     <extension point="xbmc.addon.metadata">
         <news>
-[add] send PlaybackInit, PlaybackStarted, PlaybackStopped notifications containing video id, channel id, and the status of the playing video
-[fix] allow playback regardless of API status
-    - fixes playback for strm, playlists, other add-ons, and sharing videos from devices
-[fix] finding player config, allow playback to continue when not found if possible
-[fix] fix possible loop due to invalid keys and login information
-[fix] fix playback of mpeg-dash streams if HTTP Server - Listen on IP is blank
-[upd] use a dialog to notify users of API key requirements with link to wiki
-    - https://ytaddon.page.link/keys
-[rem] remove provided api keys
-[lang] de_de strings |contrib: tweimer|
-[lang] el_gr strings |contrib: twilight0|
-[lang] hu_hu strings |contrib: thelacesz|
-[lang] pl_pl strings |contrib: drrak|
+[fix] next page now ignores sorting, remains at the end of the directory
+[fix] searching, no longer require remote safe search
+[fix] notifications for some languages
+[chg] only log http server ping failures
+[lang] zh_cn strings |contrib: yureng, xiaojun|
         </news>
         <assets>
             <icon>icon.png</icon>
@@ -739,7 +731,7 @@
         <summary lang="hu_HU">YouTube kiegészítő</summary>
         <description lang="hu_HU">A YouTube világ egyik legnagyobb videómegosztó weboldala.</description>
         <summary lang="es_ES">Plugin para YouTube</summary>
-        <description lang="es_ES">YouTube es uno de los sitios web para compartir videos más grande del mundo.</description>
+        <description lang="es_ES">YouTube es uno de los sitios web más grande del mundo para compartir vídeos.</description>
         <disclaimer lang="es_ES">Este add-on no está respaldado por Google</disclaimer>
         <summary lang="es_MX">Plugin para YouTube</summary>
         <description lang="es_MX">YouTube es uno de los más grandes sitios web de intercambio de videos del mundo.</description>
@@ -770,10 +762,9 @@
         <disclaimer lang="tr_TR">Bu eklenti Google tarafından üretilmemiştir</disclaimer>
         <platform>all</platform>
         <license>GPL-2.0-only</license>
-        <forum>https://forum.kodi.tv/showthread.php?tid=348464</forum>
+        <forum>https://ytaddon.page.link/forum</forum>
         <website>https://www.youtube.com</website>
-        <email>ytplugin at datanet dot ws</email>
-        <source>https://github.com/jdf76/plugin.video.youtube</source>
+        <source>https://github.com/anxdpanic/plugin.video.youtube</source>
         <reuselanguageinvoker>true</reuselanguageinvoker>
     </extension>
 </addon>
