@@ -1,3 +1,42 @@
+03/04/2020 v1.2.3
+Quick fix to Kickass and twoddl
+
+
+29/03/2020 v1.2.2
+Removed:
+SeedHd
+
+Fixed:
+Pirate Bay (rd)
+moviejes
+1337X (rd)
+twoddl (rd)
+eztv (rd)
+
+Added
+moviejes (tv also)
+Zooqle (rd tv)
+Kickass (rd)
+
+
+
+05/11/2019 v1.2.1
+Removed:
+Ddown
+one23movies
+Hdvix
+
+Fixed:
+piratebay(rd)
+pirateiro(rd)
+watchseries
+
+Added:
+moviejes
+idope(rd)
+twoddl (rd)
+
+
 16/07/2019 v1.2.0
 Fixed: 
 Quality issue pirateiro
