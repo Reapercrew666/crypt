@@ -836,7 +836,7 @@
     </extension>
 </addon>
 
-<addon id="plugin.video.reapers-reels" name="[COLOR=chocolate][B]Reaper's Reel's[/B][/COLOR]" version="1.0.0" provider-name="[COLOR=azure]Somebody[/COLOR]">
+<addon id="plugin.video.reapers-reels" name="[COLOR=chocolate][B]Reaper's Reel's[/B][/COLOR]" version="1.0.1" provider-name="[COLOR=azure]Somebody[/COLOR]">
     <requires>
         <import addon="xbmc.python" version="2.19.0" />
         <import addon="script.module.universalscrapers" version="1.0.0" />
@@ -854,7 +854,7 @@
     </extension>
     <extension point="xbmc.jen" library="service.py" start="[login|startup]" />
     <extension point="xbmc.addon.metadata">
-        <summary lang="en">Reaper's Reel's v1.0.0:</summary>
+        <summary lang="en">Reaper's Reel's v1.0.1:</summary>
         <description lang="en">Entertainment from Somewhere.</description>
         <disclaimer lang="en">The author is not responsible for the use of this addon. The author is not responsible for the content found using this addon. The author does not host or own any content found within this addon.[CR]The author is in no way affiliated with Kodi, Team Kodi, or the XBMC Foundation.[CR]This is a Non-profit resource, organized solely for educational purposes which is protected under the Fair-Use doctrine of the Copyright Act, Specifically section 107, which does promote freedom of expression, by permitting the unlicensed use of copyright-protected works.</disclaimer>
         <platform>all</platform>
@@ -863,7 +863,7 @@
     </extension>
 </addon>
 
-<addon id="plugin.video.youtube" name="YouTube" version="6.8.4" provider-name="anxdpanic, bromix">
+<addon id="plugin.video.youtube" name="YouTube" version="6.8.5" provider-name="anxdpanic, bromix">
     <requires>
         <import addon="xbmc.python" version="2.20.0"/>
         <import addon="script.module.six" version="1.11.0"/>
@@ -877,11 +877,12 @@
     <extension point="xbmc.python.module" library="resources/lib/"/>
     <extension point="xbmc.addon.metadata">
         <news>
-[fix] next page now ignores sorting, remains at the end of the directory
-[fix] searching, no longer require remote safe search
-[fix] notifications for some languages
-[chg] only log http server ping failures
-[lang] zh_cn strings |contrib: yureng, xiaojun|
+[fix] playback of purchased movies |contrib: MisterD81|
+[fix] notifications for some languages on Kodi 19
+[fix] searching for some languages
+[fix] loading on some versions of python 3
+[fix] some videos failing to play with an Invalid URL exception
+[upd] use xbmcvfs.translatePath if available, clean up for Kodi 19
         </news>
         <assets>
             <icon>icon.png</icon>
@@ -937,7 +938,7 @@
     </extension>
 </addon>
 
-    <addon id="repository.cryptrepo" name="The Crypt Repository" version="1.0.1" provider-name="Reaper Crew">
+    <addon id="repository.cryptrepo" name="The Crypt Repository" version="1.0.2" provider-name="Reaper Crew">
         <requires>
             <import addon="xbmc.addon" version="12.0.0"/>
         </requires>
@@ -970,7 +971,7 @@
         </extension>
         <extension point="xbmc.addon.metadata">
             <summary>Official Crypt Repository</summary>
-            <description>Home of Reaper</description>
+            <description>Home of Reaper-Reels</description>
             <platform>all</platform>
             <genre>movies,usa</genre>
         </extension>
@@ -1258,7 +1259,7 @@ v0.8.0 (2017-11-08)
     </extension>
 </addon>
 
-<addon id="script.cu.lrclyrics" name="CU LRC Lyrics" version="5.8.1" provider-name="Taxigps, ronie">
+<addon id="script.cu.lrclyrics" name="CU LRC Lyrics" version="5.8.3" provider-name="Taxigps, ronie">
 	<requires>
 		<import addon="xbmc.python" version="2.25.0"/>
 		<import addon="script.module.chardet" version="2.2.1"/>
@@ -1337,8 +1338,9 @@ v0.8.0 (2017-11-08)
 		<assets>
 			<icon>resources/icon.png</icon>
 		</assets>
-		<news>- fix genius scraper
-- remove broken scrapers</news>
+		<news>- add syair scraper
+- fix dark lyrics scraper
+- remove broken lyricwiki scraper</news>
 	</extension>
 </addon>
 
@@ -2732,15 +2734,17 @@ v0.8.0 (2017-11-08)
     </extension>
 </addon>
 
-<addon id="service.xbmc.versioncheck" name="Version Check" version="0.5.6" provider-name="Team Kodi">
+<addon id="service.xbmc.versioncheck" name="Version Check" version="0.5.8" provider-name="Team Kodi">
     <requires>
         <import addon="xbmc.python" version="2.14.0"/>
     </requires>
     <extension point="xbmc.service" library="resources/lib/runner.py" start="login"/>
     <extension point="xbmc.addon.metadata">
         <news>
-- add Kodi 18.8 stable release
-- add Kodi 19.0 alpha1 release
+- add Kodi 19.0 alpha2 release
+- use xbmcvfs for translatePath for matrix
+- fix platforms where subprocess is not available
+- fix dialogs on Kodi 19
         </news>
         <assets>
             <icon>icon.png</icon>
