@@ -1,11 +1,33 @@
 <xml>
-  <dir>
-    <title>Formats</title>
-    <link>file://formats/main.xml</link>
-  </dir>
+	<dir>
+		<title>[COLOR=darkkhaki]Audio Books[/COLOR]</title>
+		<link>http://reapercrew.chaos.feralhosting.com/xmls/audiobookmain.xml</link>
+		<thumbnail>http://reapercrew.chaos.feralhosting.com/xmls/resources/Reapers-Reels/Audiobooks_icon.png</thumbnail>
+		<fanart>http://reapercrew.chaos.feralhosting.com/xmls/resources/Reapers-Reels/Audiobooks_fanart.jpg</fanart>
+		<summary>[COLOR=darkkhaki][B][I]Audio Books[/I][/B]  A selection of audio books.[/COLOR]</summary>
+	</dir>
 
-  <dir>
-    <title>Shared Lists</title>
-    <link>file://shared lists/main.xml</link>
-  </dir>
-</xml>
+	<dir>
+		<title>[COLOR=burlywood]People[/COLOR]</title>
+		<link>http://reapercrew.chaos.feralhosting.com/xmls/peoplemain.xml</link>
+		<thumbnail>http://reapercrew.chaos.feralhosting.com/xmls/resources/Reapers-Reels/People_icon.png</thumbnail>
+		<fanart>http://reapercrew.chaos.feralhosting.com/xmls/resources/Reapers-Reels/People_fanart.jpg</fanart>
+		<summary>[COLOR=burlywood][B][I]People[/I][/B]  A Selection of Actors, Directors, Producers and everything Inbetween[/COLOR]</summary>
+	</dir>
+
+	<dir>
+		<title>[COLOR=wheat]Movies[/COLOR]</title>
+		<link>http://reapercrew.chaos.feralhosting.com/xmls/moviemain.xml</link>
+		<thumbnail>http://reapercrew.chaos.feralhosting.com/xmls/resources/Reapers-Reels/Movies_icon.png</thumbnail>
+		<fanart>http://reapercrew.chaos.feralhosting.com/xmls/resources/Reapers-Reels/Movies_fanart.jpg</fanart>
+		<summary>[COLOR=wheat][B][I]Reaper's Reel's[/I][/B]  A Selection of Movies, Collections and Boxsets.[/COLOR]</summary>
+	</dir>
+
+	<dir>
+		<title>[COLOR=palegoldenrod]TV Shows[/COLOR]</title>
+		<link>http://reapercrew.chaos.feralhosting.com/xmls/tvmain.xml</link>
+		<thumbnail>http://reapercrew.chaos.feralhosting.com/xmls/resources/Reapers-Reels/Television_icon.png</thumbnail>
+		<fanart>http://reapercrew.chaos.feralhosting.com/xmls/resources/Reapers-Reels/Television_fanart.jpg</fanart>
+		<summary>[COLOR=palegoldenrod][B][I]TV Shows[/I][/B]  A Selection of Television Form the 50's to the present day.[/COLOR]</summary>
+	</dir>
+</xml> 
