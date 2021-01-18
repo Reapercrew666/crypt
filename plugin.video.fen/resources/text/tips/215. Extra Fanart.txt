@@ -1,2 +1,0 @@
-[COLOR dodgerblue][B]Extra Fanart[/B][/COLOR]
-[I]To enable Extra Fanart, and start displaying banners, clearart and clearlogo within your skin (where supported by skin), turn on 'Include Extra Art' in the "Metadata" settings tab of Fen.[/I]
