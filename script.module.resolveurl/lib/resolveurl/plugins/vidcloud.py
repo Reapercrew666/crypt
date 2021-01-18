@@ -1,46 +1,49 @@
 """
-    resolveurl XBMC Addon
-    Copyright (C) 2016 jsergio
-
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with this program. If not, see <http://www.gnu.org/licenses/>.
+    Plugin for ResolveUrl
+    Copyright (C) 2020 gujal
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+    GNU General Public License for more details.
+    You should have received a copy of the GNU General Public License
+    along with this program. If not, see <http://www.gnu.org/licenses/>.
 """
-from lib import helpers
+
+import re
+from resolveurl.plugins.lib import helpers
 from resolveurl import common
 from resolveurl.resolver import ResolveUrl, ResolverError
 
 
 class VidCloudResolver(ResolveUrl):
     name = 'vidcloud'
-    domains = ['vidcloud.co', 'loadvid.online', 'vcstream.to']
-    pattern = '(?://|\.)((?:vidcloud\.co|loadvid\.online|vcstream\.to))/(?:embed/|v/|player\?fid=)([0-9a-zA-Z]+)'
-
-    def __init__(self):
-        self.net = common.Net()
+    domains = ['vidcloud.co', 'vidcloud.pro', 'vidcloud.is']
+    pattern = r'(?://|\.)(vidcloud\.(?:co|pro|is))/(?:embed/|v/|player\?fid=)([0-9a-zA-Z]+)'
 
     def get_media_url(self, host, media_id):
+        surl = 'https://jetload.net/jet_secure'
+        domain = 'aHR0cHM6Ly9qZXRsb2FkLm5ldDo0NDM.'
         web_url = self.get_url(host, media_id)
-        headers = {'User-Agent': common.CHROME_USER_AGENT, 'Referer': 'https://vidcloud.co/embed/%s' % media_id}
-        html = self.net.http_GET(web_url, headers=headers).content
+        rurl = 'https://{0}/'.format(host)
+        headers = {'User-Agent': common.FF_USER_AGENT,
+                   'Referer': rurl}
+        html = self.net.http_GET(web_url, headers).content
+        if 'File Deleted' not in html:
+            token = helpers.girc(html, rurl, domain)
+            if token:
+                edata = {'stream_code': media_id,
+                         'token': token}
+                headers.update({'Origin': rurl[:-1]})
+                shtml = self.net.http_POST(surl, form_data=edata, headers=headers, jdata=True).content
+                r = re.search('"src":"([^"]+)', shtml)
+                if r:
+                    return r.group(1) + helpers.append_headers(headers)
 
-        if html:
-            sources = helpers.scrape_sources(html.replace("\\n", "").replace("\\", ""), patterns=[
-                '''file":\s*"(?P<url>[^"]+)''', '''src":\s*"(?P<url>[^"]+)(?:[^}>\]]+)label":\s*"(?P<label>[^"]+)'''],
-                                             generic_patterns=False)
-            if sources:
-                return helpers.pick_source(sources) + helpers.append_headers(headers)
-
-        raise ResolverError("Unable to locate video")
+        raise ResolverError('File Not Found or removed')
 
     def get_url(self, host, media_id):
-        return self._default_get_url(host, media_id, template='https://vidcloud.co/player?fid={media_id}&page=embed')
+        return self._default_get_url(host, media_id, 'https://{host}/embed/{media_id}')

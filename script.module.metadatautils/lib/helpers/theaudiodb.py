@@ -7,14 +7,18 @@
     Get metadata from theaudiodb
 """
 
-from utils import get_json, strip_newlines, KODI_LANGUAGE, get_compare_string
+import os, sys
+if sys.version_info.major == 3:
+    from .utils import get_json, strip_newlines, KODI_LANGUAGE, get_compare_string, ADDON_ID
+else:
+    from utils import get_json, strip_newlines, KODI_LANGUAGE, get_compare_string, ADDON_ID
 from simplecache import use_cache
 import xbmcvfs
-
+import xbmcaddon
 
 class TheAudioDb(object):
     """get metadata from the audiodb"""
-    api_key = "12376f5352254d85853987"
+    api_key = None  # public var to be set by the calling addon
     ignore_cache = False
 
     def __init__(self, simplecache=None):
@@ -24,32 +28,35 @@ class TheAudioDb(object):
             self.cache = SimpleCache()
         else:
             self.cache = simplecache
-
+        addon = xbmcaddon.Addon(id=ADDON_ID)
+        api_key = addon.getSetting("adb_apikey")
+        if api_key:
+            self.api_key = api_key
+        del addon
+        
     def search(self, artist, album, track):
         """get musicbrainz id by query of artist, album and/or track"""
-        artistid = ""
-        albumid = ""
         artist = artist.lower()
         params = {'s': artist, 'a': album}
         data = self.get_data("searchalbum.php", params)
-        if data and data.get("album") and len(data.get("album")) > 0:
-            adbdetails = data["album"][0]
-            # safety check - only allow exact artist match
-            foundartist = adbdetails.get("strArtist", "").lower()
-            if foundartist and get_compare_string(foundartist) == get_compare_string(artist):
-                albumid = adbdetails.get("strMusicBrainzID", "")
-                artistid = adbdetails.get("strMusicBrainzArtistID", "")
-        if (not artistid or not albumid) and artist and track:
-            params = {'s': artist, 't': track}
+        if not album and track:
+            params = {'t': track, 's': artist}
             data = self.get_data("searchtrack.php", params)
             if data and data.get("track") and len(data.get("track")) > 0:
                 adbdetails = data["track"][0]
                 # safety check - only allow exact artist match
                 foundartist = adbdetails.get("strArtist", "").lower()
                 if foundartist and get_compare_string(foundartist) == get_compare_string(artist):
-                    albumid = adbdetails.get("strMusicBrainzID", "")
-                    artistid = adbdetails.get("strMusicBrainzArtistID", "")
-        return artistid, albumid
+                    album = adbdetails.get("strAlbum", "")
+                    artist = adbdetails.get("strArtist", "")
+        if data and data.get("album") and len(data.get("album")) > 0:
+            adbdetails = data["album"][0]
+            # safety check - only allow exact artist match
+            foundartist = adbdetails.get("strArtist", "").lower()
+            if foundartist and get_compare_string(foundartist) == get_compare_string(artist):
+                album = adbdetails.get("strAlbum", "")
+                artist = adbdetails.get("strArtist", "")
+        return artist, album
 
     def get_artist_id(self, artist, album, track):
         """get musicbrainz id by query of artist, album and/or track"""
@@ -59,10 +66,10 @@ class TheAudioDb(object):
         """get musicbrainz id by query of artist, album and/or track"""
         return self.search(artist, album, track)[1]
 
-    def artist_info(self, artist_id):
-        """get artist metadata by musicbrainz id"""
+    def artist_info(self, artist):
+        """get artist metadata by artist"""
         details = {"art": {}}
-        data = self.get_data("/artist-mb.php", {'i': artist_id})
+        data = self.get_data("/search.php", {'s': artist})
         if data and data.get("artists"):
             adbdetails = data["artists"][0]
             if adbdetails.get("strArtistBanner") and xbmcvfs.exists(adbdetails.get("strArtistBanner")):
@@ -76,6 +83,8 @@ class TheAudioDb(object):
                 details["art"]["fanarts"].append(adbdetails.get("strArtistFanart2"))
             if adbdetails.get("strArtistFanart3") and xbmcvfs.exists(adbdetails.get("strArtistFanart3")):
                 details["art"]["fanarts"].append(adbdetails.get("strArtistFanart3"))
+            if adbdetails.get("strArtistWideThumb") and xbmcvfs.exists(adbdetails.get("strArtistWideThumb")):
+                details["art"]["landscape"] = adbdetails.get("strArtistWideThumb")
             if adbdetails.get("strArtistLogo") and xbmcvfs.exists(adbdetails.get("strArtistLogo")):
                 details["art"]["clearlogo"] = adbdetails.get("strArtistLogo")
                 details["art"]["clearlogos"] = [adbdetails.get("strArtistLogo")]
@@ -121,10 +130,10 @@ class TheAudioDb(object):
                 details["country"] = adbdetails["strCountry"].split(", ")
         return details
 
-    def album_info(self, album_id):
-        """get album metadata by musicbrainz id"""
+    def album_info(self, artist, album):
+        """get album metadata by name"""
         details = {"art": {}}
-        data = self.get_data("/album-mb.php", {'i': album_id})
+        data = self.get_data("/searchalbum.php", {'s': artist, 'a': album})
         if data and data.get("album"):
             adbdetails = data["album"][0]
             if adbdetails.get("strAlbumThumb") and xbmcvfs.exists(adbdetails.get("strAlbumThumb")):
@@ -137,6 +146,14 @@ class TheAudioDb(object):
                 details["art"]["spine"] = adbdetails.get("strAlbumSpine")
             if adbdetails.get("strAlbumThumbBack") and xbmcvfs.exists(adbdetails.get("strAlbumThumbBack")):
                 details["art"]["thumbback"] = adbdetails.get("strAlbumThumbBack")
+            if adbdetails.get("strAlbum3DCase") and xbmcvfs.exists(adbdetails.get("strAlbum3DCase")):
+                details["art"]["album3Dcase"] = adbdetails.get("strAlbum3DCase")
+            if adbdetails.get("strAlbum3DFlat") and xbmcvfs.exists(adbdetails.get("strAlbum3DFlat")):
+                details["art"]["album3Dflat"] = adbdetails.get("strAlbum3DFlat")
+            if adbdetails.get("strAlbum3DFace") and xbmcvfs.exists(adbdetails.get("strAlbum3DFace")):
+                details["art"]["album3Dface"] = adbdetails.get("strAlbum3DFace")
+            if adbdetails.get("strAlbum3DThumb") and xbmcvfs.exists(adbdetails.get("strAlbum3DThumb")):
+                details["art"]["album3Dthumb"] = adbdetails.get("strAlbum3DThumb")
             if adbdetails.get("strDescription%s" % KODI_LANGUAGE.upper()):
                 details["plot"] = adbdetails.get("strDescription%s" % KODI_LANGUAGE.upper())
             if not details.get("plot") and adbdetails.get("strDescriptionEN"):
@@ -155,12 +172,27 @@ class TheAudioDb(object):
                 details["rating"] = adbdetails["intScore"]
             if adbdetails.get("strAlbum"):
                 details["title"] = adbdetails["strAlbum"]
+            if adbdetails.get("strLabel"):
+                details["albumlabel"] = adbdetails["strLabel"]
+            if adbdetails.get("idAlbum"):
+                details["idalbum"] = adbdetails["idAlbum"]
+                if adbdetails.get("idAlbum"):
+                    idalbum = adbdetails.get("idAlbum", "")
+                    data = self.get_data("/track.php", {'m': idalbum})
+                    adbtrackdetails = data["track"]
+                    if data.get("track"):
+                        tracks = []
+                        for count, item in enumerate(adbtrackdetails):
+                            tracks.append(item["strTrack"])
+                            details["tracks.formatted.%s" % count] = item["intTrackNumber"] + "." + item["strTrack"]
+                            details["tracks.clean.formatted.%s" % count] = item["strTrack"]
+                        details["tracks.formatted"] = "[CR]".join(tracks)
         return details
 
     @use_cache(60)
     def get_data(self, endpoint, params):
         """helper method to get data from theaudiodb json API"""
-        endpoint = 'http://www.theaudiodb.com/api/v1/json/%s/%s' % (self.api_key, endpoint)
+        endpoint = 'https://www.theaudiodb.com/api/v1/json/%s/%s' % (self.api_key, endpoint)
         data = get_json(endpoint, params)
         if data:
             return data

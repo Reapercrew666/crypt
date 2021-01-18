@@ -11,13 +11,13 @@ dev_log = xbmcaddon.Addon('script.module.universalscrapers').getSetting("dev_log
 
 
 class thewatchseries(Scraper):
-    domains = ['gowatchseries.co', 'gowatchseries.tv']
+    domains = ['gowatchseries.co', 'gowatchseries.ac']
     name = "GoWatchSeries"
     sources = []
 
 
     def __init__(self):
-        self.base_link = 'https://gowatchseries.tv/'
+        self.base_link = 'https://www3.gowatchseries.ac/'
         self.sources = []
 
 

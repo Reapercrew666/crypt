@@ -7,7 +7,11 @@
     Get metadata from The Movie Database
 """
 
-from utils import get_json, KODI_LANGUAGE, try_parse_int, DialogSelect, get_compare_string, int_with_commas, ADDON_ID
+import os, sys
+if sys.version_info.major == 3:
+    from .utils import get_json, KODI_LANGUAGE, try_parse_int, DialogSelect, get_compare_string, int_with_commas, ADDON_ID
+else:
+    from utils import get_json, KODI_LANGUAGE, try_parse_int, DialogSelect, get_compare_string, int_with_commas, ADDON_ID
 from difflib import SequenceMatcher as SM
 from simplecache import use_cache
 from operator import itemgetter
@@ -148,7 +152,7 @@ class Tmdb(object):
         result = self.get_data("search/person", params)
         if result:
             result = result[0]
-            cast_thumb = "http://image.tmdb.org/t/p/original%s" % result[
+            cast_thumb = "https://image.tmdb.org/t/p/original%s" % result[
                 "profile_path"] if result["profile_path"] else ""
             item = {"name": result["name"],
                     "thumb": cast_thumb,
@@ -175,8 +179,8 @@ class Tmdb(object):
             details["title"] = result["name"]
             details["plot"] = result["overview"]
             details["tmdb_id"] = result["id"]
-            details["art"]["poster"] = "http://image.tmdb.org/t/p/original%s" % result["poster_path"]
-            details["art"]["fanart"] = "http://image.tmdb.org/t/p/original%s" % result["backdrop_path"]
+            details["art"]["poster"] = "https://image.tmdb.org/t/p/original%s" % result["poster_path"]
+            details["art"]["fanart"] = "https://image.tmdb.org/t/p/original%s" % result["backdrop_path"]
             details["totalmovies"] = len(result["parts"])
         return details
 
@@ -212,14 +216,17 @@ class Tmdb(object):
             # without personal (or addon specific) api key = rate limiting and older info from cache
             rate_limit = ("themoviedb.org", 5)
             expiration = datetime.timedelta(days=60)
-        cachestr = "tmdb.%s" % params.itervalues()
+        if sys.version_info.major == 3:
+            cachestr = "tmdb.%s" % params.values()
+        else:
+            cachestr = "tmdb.%s" % params.itervalues()
         cache = self.cache.get(cachestr)
         if cache:
             # data obtained from cache
             result = cache
         else:
             # no cache, grab data from API
-            url = u'http://api.themoviedb.org/3/%s' % endpoint
+            url = u'https://api.themoviedb.org/3/%s' % endpoint
             result = get_json(url, params, ratelimit=rate_limit)
             # make sure that we have a plot value (if localized value fails, fallback to english)
             if result and "language" in params and "overview" in result:
@@ -258,7 +265,7 @@ class Tmdb(object):
                 for cast_member in data["credits"]["cast"]:
                     cast_thumb = ""
                     if cast_member["profile_path"]:
-                        cast_thumb = "http://image.tmdb.org/t/p/original%s" % cast_member["profile_path"]
+                        cast_thumb = "https://image.tmdb.org/t/p/original%s" % cast_member["profile_path"]
                     details["cast"].append({"name": cast_member["name"], "role": cast_member["character"],
                                             "thumbnail": cast_thumb})
                     details["castandrole"].append((cast_member["name"], cast_member["character"]))
@@ -267,7 +274,7 @@ class Tmdb(object):
                 for crew_member in data["credits"]["crew"]:
                     cast_thumb = ""
                     if crew_member["profile_path"]:
-                        cast_thumb = "http://image.tmdb.org/t/p/original%s" % crew_member["profile_path"]
+                        cast_thumb = "https://image.tmdb.org/t/p/original%s" % crew_member["profile_path"]
                     if crew_member["job"] in ["Author", "Writer"]:
                         details["writer"].append(crew_member["name"])
                     if crew_member["job"] in ["Producer", "Executive Producer"]:
@@ -287,9 +294,9 @@ class Tmdb(object):
                 details["art"]["posters"] = posters
                 details["art"]["poster"] = posters[0] if posters else ""
         if not details["art"].get("poster") and data.get("poster_path"):
-            details["art"]["poster"] = "http://image.tmdb.org/t/p/original%s" % data["poster_path"]
+            details["art"]["poster"] = "https://image.tmdb.org/t/p/original%s" % data["poster_path"]
         if not details["art"].get("fanart") and data.get("backdrop_path"):
-            details["art"]["fanart"] = "http://image.tmdb.org/t/p/original%s" % data["backdrop_path"]
+            details["art"]["fanart"] = "https://image.tmdb.org/t/p/original%s" % data["backdrop_path"]
         # movies only
         if media_type == "movie":
             details["title"] = data["title"]
@@ -354,8 +361,8 @@ class Tmdb(object):
                 if image["iso_639_1"] == KODI_LANGUAGE:
                     score += 1000
             image["score"] = score
-            if not image["file_path"].startswith("http"):
-                image["file_path"] = "http://image.tmdb.org/t/p/original%s" % image["file_path"]
+            if not image["file_path"].startswith("https"):
+                image["file_path"] = "https://image.tmdb.org/t/p/original%s" % image["file_path"]
         images = sorted(images, key=itemgetter("score"), reverse=True)
         return [image["file_path"] for image in images]
 
@@ -426,11 +433,12 @@ class Tmdb(object):
                 else:
                     year = item.get("first_air_date", "").split("-")[0]
                 if item["poster_path"]:
-                    thumb = "http://image.tmdb.org/t/p/original%s" % item["poster_path"]
+                    thumb = "https://image.tmdb.org/t/p/original%s" % item["poster_path"]
                 else:
                     thumb = ""
                 label = "%s (%s) - %s" % (title, year, item["media_type"])
-                listitem = xbmcgui.ListItem(label=label, iconImage=thumb, label2=item["overview"])
+                listitem = xbmcgui.ListItem(label=label, label2=item["overview"])
+                listitem.setArt({'icon': thumb})
                 results_list.append(listitem)
             if manual_select and results_list:
                 dialog = DialogSelect("DialogSelect.xml", "", listing=results_list, window_title="%s - TMDB"

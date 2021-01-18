@@ -6,7 +6,11 @@
     kodi_constants.py
     Several common constants for use with Kodi json api
 """
-from utils import KODI_VERSION
+import os, sys
+if sys.version_info.major == 3:
+    from .utils import KODI_VERSION
+else:
+    from utils import KODI_VERSION
 
 FIELDS_BASE = ["dateadded", "file", "lastplayed", "plot", "title", "art", "playcount"]
 FIELDS_FILE = FIELDS_BASE + ["streamdetails", "director", "resume", "runtime"]
@@ -29,7 +33,7 @@ FIELDS_FILES = FIELDS_FILE + ["plotoutline", "sorttitle", "cast", "votes", "trai
 FIELDS_SONGS = ["artist", "displayartist", "title", "rating", "fanart", "thumbnail", "duration", "disc",
                 "playcount", "comment", "file", "album", "lastplayed", "genre", "musicbrainzartistid", "track",
                 "dateadded"]
-FIELDS_ALBUMS = ["title", "fanart", "thumbnail", "genre", "displayartist", "artist", "genreid",
+FIELDS_ALBUMS = ["title", "fanart", "thumbnail", "genre", "displayartist", "artist",
                  "musicbrainzalbumartistid", "year", "rating", "artistid", "musicbrainzalbumid", "theme", "description",
                  "type", "style", "playcount", "albumlabel", "mood", "dateadded"]
 FIELDS_ARTISTS = ["born", "formed", "died", "style", "yearsactive", "mood", "fanart", "thumbnail",

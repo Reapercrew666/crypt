@@ -1,0 +1,1 @@
+Resolution icons for source select directory list may not be seen by all skins.  It's best to test.

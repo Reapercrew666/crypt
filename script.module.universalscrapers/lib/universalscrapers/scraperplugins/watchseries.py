@@ -17,7 +17,7 @@ class serieswatch(Scraper):
 
 
     def __init__(self): # to use .co again swap to https also. https://ww4.watch-series.co/
-        self.base_link = 'http://www2.watch-series.live'
+        self.base_link = 'https://www1.watchseries.so'
         self.search_link = '/search.html?keyword='
         self.scraper = cfscrape.create_scraper()
 

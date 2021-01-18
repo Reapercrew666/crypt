@@ -12,12 +12,12 @@ dev_log = xbmcaddon.Addon('script.module.universalscrapers').getSetting("dev_log
 
 
 class twoddl(Scraper):
-    domains = ['http://2ddl.io/']
-    name = "TwoDDL"
+    domains = ['onceddl.xyz']
+    name = "OnceDDl"
     sources = []
 
     def __init__(self):
-        self.base_link = 'https://onceddl.com/'
+        self.base_link = 'https://onceddl.xyz/'
 
 
     def scrape_movie(self, title, year, imdb, debrid=False):

@@ -12,13 +12,13 @@ dev_log = xbmcaddon.Addon('script.module.universalscrapers').getSetting("dev_log
 
 
 class joymovies(Scraper):
-    domains = ['oceanofmovies.org']
+    domains = ['oceanofmovies.se']
     name = "OceanofMovies"
     sources = []
 
 
     def __init__(self):
-        self.base_link = 'https://oceanofmovies.org'
+        self.base_link = 'https://oceanofmovies.se'
         self.search_link = '/search/%s/feed/rss2/'
 
 

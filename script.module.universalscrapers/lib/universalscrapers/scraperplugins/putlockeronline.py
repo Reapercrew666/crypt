@@ -11,13 +11,13 @@ dev_log = xbmcaddon.Addon('script.module.universalscrapers').getSetting("dev_log
 
 
 class putlocker_online(Scraper):
-    domains = ['putlockeronlinefree.watch']
+    domains = ['putlocker-is.org']
     name = "PutlockerOnline"
     sources = []
 
 
     def __init__(self):
-        self.base_link = 'https://putlockeronlinefree.watch'
+        self.base_link = 'https://putlocker-is.org'
 
 
     def scrape_movie(self, title, year, imdb, debrid=False):
@@ -26,11 +26,11 @@ class putlocker_online(Scraper):
             urls = []
             start_time = time.time()
             search_id = clean_search(title.lower())
-            start_url = '%s/search_movies?s=%s' %(self.base_link, urllib.quote_plus(search_id))
+            start_url = '%s/search/?keyword=%s' %(self.base_link, urllib.quote_plus(search_id))
             headers = {'User-Agent': client.agent(), 'Referer': self.base_link}
             scraper = cfscrape.create_scraper()
             html = scraper.get(start_url, headers=headers).content
-            match = re.compile('class="small-item".+?href="(.+?)".+?<b>(.+?)</b>.+?<b>(.+?)</b>.+?alt="(.+?)"',re.DOTALL).findall(html)
+            match = re.compile('class="ml-item".+?href="(.+?)".+?<b>(.+?)</b>.+?<b>(.+?)</b>.+?alt="(.+?)"',re.DOTALL).findall(html)
             for item_url1, date, res, name in match:
                 item_url = urlparse.urljoin(self.base_link, item_url1)
                 if not clean_title(search_id) == clean_title(name):

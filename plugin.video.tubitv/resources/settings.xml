@@ -1,0 +1,5 @@
+<settings>
+    <category label="Enter Own API's">
+		<setting id="tmdb_api_key" type="text" label="TMDB API Key" option="hidden" default=""/>
+    </category>
+</settings>

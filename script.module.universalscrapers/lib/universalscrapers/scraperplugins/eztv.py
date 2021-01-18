@@ -18,8 +18,8 @@ class eztv(Scraper):
 
 
     def __init__(self):
-        self.base_link = 'https://eztv.d4.re'
-        self.tvsearch = 'https://eztv.d4.re/search/{0}'
+        self.base_link = 'https://eztv.re/'
+        self.tvsearch = 'https://eztv.re/search/{0}'
 
 
     def scrape_episode(self, title, show_year, year, season, episode, imdb, tvdb, debrid=False):

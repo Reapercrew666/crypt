@@ -1,3 +1,28 @@
+[B]3.5.12[/B]
+- Changed: updated de and zh language codes to match tmdb - these codes needs to be reset by the users
+
+[B]3.5.10[/B]
+- Fixed: Try to workaround search results issue
+
+[B]3.5.9[/B]
+- Fixed: Guest Stars were not scraped in some cases
+
+
+[B]3.5.8[/B]
+- Fixed: Some more fixes following tmdb layout changes
+
+[B]3.5.7[/B]
+- Fixed: Episode list for languages what are not available
+
+[B]3.5.6[/B]
+- Fixed: Scraping following TMDB API layout changes
+
+[B]3.5.5[/B]
+- Fixed: Swapped actor name and role for actors without photo
+
+[B]3.5.4[/B]
+- Fixed: Change image URLs from http to https
+
 [B]3.5.3[/B]
 - Fixed: Exclude backdrops with text to be scraped as fanart
 

@@ -15,7 +15,7 @@ class watchstream(Scraper):
 
 
     def __init__(self):
-        self.base_link = 'https://www7.putlockers.movie/embed/'
+        self.base_link = 'https://ww1.putlockers.movie/'
 
 
     def scrape_movie(self, title, year, imdb, debrid = False):

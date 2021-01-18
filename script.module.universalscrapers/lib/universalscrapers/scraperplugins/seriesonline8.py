@@ -14,7 +14,7 @@ class seriesonline8(Scraper):
     sources = []
 
     def __init__(self):
-        self.base_link = 'https://www2.seriesonline8.co'
+        self.base_link = 'https://www5.series9.ac/'
         self.search_link = '/movie/search'
 
     def scrape_movie(self, title, year, imdb, debrid=False):

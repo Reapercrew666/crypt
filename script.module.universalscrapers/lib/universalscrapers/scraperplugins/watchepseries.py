@@ -18,7 +18,7 @@ class Watchepisodes(Scraper):
 
 
     def __init__(self):
-        self.base_link = 'https://www.watchepisodeseries.com/'
+        self.base_link = 'https://watchepisodeseries1.com/'
         self.search_link = 'home/search?q=%s'
         self.sources = []
 
