@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-    <addon id="repository.cryptrepo" name="The Crypt Repository" version="1.0.1" provider-name="Reaper Crew">
+    <addon id="repository.cryptrepo" name="The Crypt Repository" version="1.0.2" provider-name="Reaper Crew">
         <requires>
             <import addon="xbmc.addon" version="12.0.0"/>
         </requires>
         <extension point="xbmc.addon.repository" name="The Crypt Repository">
-            <info compressed="false">https://github.com/Reapercrew666/crypt/tree/master/_zips/addons.xml</info>
-            <checksum>https://github.com/Reapercrew666/crypt/tree/master/_zips/addons.xml.md5</checksum>
-            <datadir zip="true">https://github.com/Reapercrew666/crypt/tree/master/_zips_zips/</datadir>
+            <info compressed="false">https://raw.githubusercontent.com/Reapercrew666/crypt/master/_zips/addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/Reapercrew666/crypt/master/_zips/addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.githubusercontent.com/Reapercrew666/crypt/master/_zips/</datadir>
             <hashes>false</hashes>
 		<dir>
             <info compressed="false">https://raw.githubusercontent.com/jenaddon/repository.jenrepo/master/zips/addons.xml</info>

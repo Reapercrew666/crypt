@@ -755,7 +755,7 @@
     </extension>
 </addon>
 
-    <addon id="repository.cryptrepo" name="The Crypt Repository" version="1.0.1" provider-name="Reaper Crew">
+    <addon id="repository.cryptrepo" name="The Crypt Repository" version="1.0.2" provider-name="Reaper Crew">
         <requires>
             <import addon="xbmc.addon" version="12.0.0"/>
         </requires>
